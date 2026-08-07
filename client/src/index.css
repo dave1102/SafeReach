@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  :focus-visible {
+    outline: 2px solid theme('colors.trust.500');
+    outline-offset: 2px;
+  }
+  /* Large text accessibility mode toggled via <html class="text-lg-mode"> */
+  html.text-lg-mode { font-size: 118%; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/70 dark:bg-mist-800/60 backdrop-blur-lg border border-white/40 dark:border-white/10 shadow-glass rounded-3xl;
+  }
+  .glass-card {
+    @apply bg-white/60 dark:bg-mist-800/50 backdrop-blur-md border border-white/30 dark:border-white/10 shadow-glass rounded-2.5xl transition-transform duration-200 hover:-translate-y-0.5;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-trust-600 text-white font-semibold px-5 py-2.5 shadow-glass hover:bg-trust-700 active:scale-95 transition-all duration-150 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-signal-600 text-white font-semibold px-5 py-2.5 shadow-glass hover:bg-signal-700 active:scale-95 transition-all duration-150;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-trust-300 dark:border-white/20 text-trust-700 dark:text-trust-200 font-medium px-5 py-2.5 hover:bg-trust-50 dark:hover:bg-white/5 transition-all duration-150;
+  }
+  .input-field {
+    @apply w-full rounded-2xl border border-mist-200 dark:border-white/10 bg-white/80 dark:bg-mist-900/60 px-4 py-2.5 text-mist-800 dark:text-mist-100 placeholder:text-mist-400 focus:border-trust-400 outline-none transition-colors;
+  }
+  .section-title {
+    @apply font-display font-semibold text-lg text-mist-800 dark:text-mist-100;
+  }
+}
