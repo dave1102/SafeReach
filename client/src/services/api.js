@@ -1,4 +1,4 @@
-// Thin fetch wrapper for the SafeReach Express backend. Attaches the
+// Thin fetch wrapper for the Overflow AI Express backend. Attaches the
 // current user's Firebase ID token so protected routes (AI assistant,
 // places search, admin) can verify the caller server-side.
 import { auth } from '../firebase.js'

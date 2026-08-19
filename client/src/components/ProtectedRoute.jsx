@@ -7,7 +7,7 @@ export default function ProtectedRoute({ children }) {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64 text-mist-500">
-        Loading SafeReach…
+        Loading Overflow AI…
       </div>
     )
   }

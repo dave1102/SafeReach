@@ -59,7 +59,7 @@ export default function Login() {
         <button onClick={google} className="btn-outline w-full">Continue with Google</button>
 
         <p className="text-center text-sm text-mist-500 mt-6">
-          New to SafeReach? <Link to="/signup" className="text-trust-600 dark:text-trust-300 font-medium">Create an account</Link>
+          New to Overflow AI? <Link to="/signup" className="text-trust-600 dark:text-trust-300 font-medium">Create an account</Link>
         </p>
       </GlassCard>
     </div>

@@ -1,1 +1,1 @@
-export const log = (...args) => console.log('[safereach]', ...args)
+export const log = (...args) => console.log('[overflow-ai]', ...args)

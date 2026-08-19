@@ -23,7 +23,7 @@ app.use(express.json({ limit: '1mb' }))
 // (see routes/ai.js) since that's the most expensive endpoint to abuse.
 app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 300 }))
 
-app.get('/api/health', (req, res) => res.json({ status: 'ok', service: 'safereach-api' }))
+app.get('/api/health', (req, res) => res.json({ status: 'ok', service: 'overflow-ai-api' }))
 
 app.use('/api/ai', aiRoutes)
 app.use('/api/places', placesRoutes)
@@ -34,5 +34,5 @@ app.use((req, res) => res.status(404).json({ message: 'Not found' }))
 app.use(errorHandler)
 
 app.listen(PORT, () => {
-  console.log(`SafeReach API listening on port ${PORT}`)
+  console.log(`Overflow AI API listening on port ${PORT}`)
 })

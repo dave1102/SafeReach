@@ -1,6 +1,6 @@
-# SafeReach — Firestore Data Model
+# Overflow AI — Firestore Data Model
 
-SafeReach uses Firestore (NoSQL, document/collection based) rather than a relational schema.
+Overflow AI uses Firestore (NoSQL, document/collection based) rather than a relational schema.
 Collections and their document shapes are described below.
 
 ## `users/{uid}`

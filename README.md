@@ -1,9 +1,9 @@
-# SafeReach 🚨
+# Overflow AI 🚨
 
 Instant emergency assistance — SOS alerts, nearby hospitals & police, one-tap emergency contacts,
 an offline first-aid library, and an AI symptom assistant, in a fast, installable, mobile-first PWA.
 
-> ⚠️ **SafeReach is a demo/starter application.** The AI assistant and first-aid content are for
+> ⚠️ **Overflow AI is a demo/starter application.** The AI assistant and first-aid content are for
 > general information only and are not a substitute for professional medical advice or emergency
 > services. Always call your local emergency number in a life-threatening situation.
 
@@ -23,7 +23,7 @@ an offline first-aid library, and an AI symptom assistant, in a fast, installabl
 ## Project structure
 
 ```
-safereach/
+overflow-ai/
 ├── client/                  React + Vite frontend
 │   ├── src/
 │   │   ├── components/      Reusable UI (SOSButton, MapView, ContactCard, ...)

@@ -21,7 +21,7 @@ export default function Navbar() {
     return (
       <header className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
         <span className="font-display font-bold text-xl text-trust-700 dark:text-trust-200">
-          SafeReach
+          Overflow AI
         </span>
         <button onClick={toggleDark} className="btn-outline !px-3 !py-2" aria-label="Toggle dark mode">
           {dark ? '☀️' : '🌙'}
@@ -34,7 +34,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 backdrop-blur-lg bg-white/60 dark:bg-mist-900/60 border-b border-white/40 dark:border-white/10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
         <NavLink to="/" className="font-display font-bold text-xl text-trust-700 dark:text-trust-200 shrink-0">
-          SafeReach
+          Overflow AI
         </NavLink>
 
         <nav className="hidden md:flex items-center gap-1 overflow-x-auto">

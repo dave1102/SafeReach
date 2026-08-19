@@ -44,7 +44,7 @@ export default function Signup() {
     <div className="flex justify-center items-center min-h-[80vh]">
       <GlassCard className="w-full max-w-sm !p-8">
         <h1 className="font-display font-bold text-2xl text-center mb-1 text-trust-700 dark:text-trust-200">Create your account</h1>
-        <p className="text-center text-sm text-mist-500 mb-6">Set up SafeReach before you need it.</p>
+        <p className="text-center text-sm text-mist-500 mb-6">Set up Overflow AI before you need it.</p>
 
         <form onSubmit={submit} className="flex flex-col gap-3">
           <input required placeholder="Full name" value={name}

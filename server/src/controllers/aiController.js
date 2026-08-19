@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 // System prompt keeps the assistant firmly in "informational triage"
 // territory: possible causes + first aid + urgency guidance, always
 // paired with a disclaimer, never a diagnosis.
-const SYSTEM_PROMPT = `You are the SafeReach AI Assistant, a calm, careful first-aid and
+const SYSTEM_PROMPT = `You are the Overflow AI AI Assistant, a calm, careful first-aid and
 symptom-information helper embedded in an emergency-preparedness app.
 
 For every message describing symptoms:

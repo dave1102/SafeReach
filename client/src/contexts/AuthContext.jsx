@@ -29,7 +29,7 @@ export function AuthProvider({ children }) {
           // First sign-in: create the user profile doc used for roles,
           // accessibility prefs, and admin approval status.
           const newProfile = {
-            name: firebaseUser.displayName || 'SafeReach User',
+            name: firebaseUser.displayName || 'Overflow AI User',
             email: firebaseUser.email,
             role: 'user',
             createdAt: serverTimestamp(),

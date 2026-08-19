@@ -3,17 +3,17 @@ import { createContext, useContext, useEffect, useState } from 'react'
 const ThemeContext = createContext(null)
 
 export function ThemeProvider({ children }) {
-  const [dark, setDark] = useState(() => localStorage.getItem('sr-dark') === 'true')
-  const [largeText, setLargeText] = useState(() => localStorage.getItem('sr-large-text') === 'true')
+  const [dark, setDark] = useState(() => localStorage.getItem('oai-dark') === 'true')
+  const [largeText, setLargeText] = useState(() => localStorage.getItem('oai-large-text') === 'true')
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', dark)
-    localStorage.setItem('sr-dark', dark)
+    localStorage.setItem('oai-dark', dark)
   }, [dark])
 
   useEffect(() => {
     document.documentElement.classList.toggle('text-lg-mode', largeText)
-    localStorage.setItem('sr-large-text', largeText)
+    localStorage.setItem('oai-large-text', largeText)
   }, [largeText])
 
   const value = {

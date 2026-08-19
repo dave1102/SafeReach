@@ -4,7 +4,7 @@ export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
-      // Token system for SafeReach. Brief specifies blue/green/white,
+      // Token system for Overflow AI. Brief specifies blue/green/white,
       // glassmorphism, rounded cards — these are deliberate shades within
       // that brief, not defaults: a deep "trust" blue for structure/nav,
       // a "signal" green for safe/positive actions, a reserved red used

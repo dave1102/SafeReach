@@ -1,4 +1,4 @@
-# SafeReach — Deployment Guide
+# Overflow AI — Deployment Guide
 
 ## Overview
 
@@ -33,12 +33,12 @@ works — pick what your team already uses.
 3. Build command: `npm install`. Start command: `npm start`.
 4. Environment variables (Render dashboard → Environment):
    - `PORT` — Render sets this automatically, but the app reads `process.env.PORT` so it's fine.
-   - `CLIENT_ORIGIN` — your deployed frontend URL, e.g. `https://safereach.vercel.app`
+   - `CLIENT_ORIGIN` — your deployed frontend URL, e.g. `https://overflow-ai.vercel.app`
    - `GEMINI_API_KEY` or `OPENAI_API_KEY`
    - `GOOGLE_PLACES_API_KEY` (optional)
    - `FIREBASE_SERVICE_ACCOUNT_JSON` — paste the **entire** service account JSON as one line
      (the app checks this env var before falling back to a file path — no need to upload the file)
-5. Deploy. Note the resulting URL (e.g. `https://safereach-api.onrender.com`).
+5. Deploy. Note the resulting URL (e.g. `https://overflow-ai-api.onrender.com`).
 
 Cloud Run / Fly.io / a VPS follow the same shape: build with `npm install`, run with `npm start`,
 set the same environment variables, and open port 5000 (or whatever `$PORT` resolves to).
@@ -50,7 +50,7 @@ set the same environment variables, and open port 5000 (or whatever `$PORT` reso
 3. Environment variables (from `client/.env`):
    - `VITE_FIREBASE_API_KEY`, `VITE_FIREBASE_AUTH_DOMAIN`, `VITE_FIREBASE_PROJECT_ID`,
      `VITE_FIREBASE_STORAGE_BUCKET`, `VITE_FIREBASE_MESSAGING_SENDER_ID`, `VITE_FIREBASE_APP_ID`
-   - `VITE_API_BASE_URL` → your deployed backend, e.g. `https://safereach-api.onrender.com/api`
+   - `VITE_API_BASE_URL` → your deployed backend, e.g. `https://overflow-ai-api.onrender.com/api`
    - `VITE_GOOGLE_PLACES_KEY` (optional, only if you want it available client-side too)
 4. In Firebase console → Authentication → Settings → **Authorized domains**, add your Vercel
    domain (and any custom domain) so Google Sign-In works there.

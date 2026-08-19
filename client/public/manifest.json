@@ -1,6 +1,6 @@
 {
-  "name": "SafeReach - Emergency Assistant",
-  "short_name": "SafeReach",
+  "name": "Overflow AI - Emergency Assistant",
+  "short_name": "Overflow AI",
   "description": "Instant emergency assistance, first aid guidance, and AI symptom help.",
   "start_url": "/",
   "display": "standalone",

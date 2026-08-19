@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
-// SafeReach client build config.
+// Overflow AI client build config.
 // The PWA plugin pre-caches the app shell plus first-aid/hospital/contact
 // data so the app stays usable with no signal — see src/services/api.js
 // for how offline caching of API responses works alongside this.
@@ -13,8 +13,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['icons/*.png'],
       manifest: {
-        name: 'SafeReach - Emergency Assistant',
-        short_name: 'SafeReach',
+        name: 'Overflow AI - Emergency Assistant',
+        short_name: 'Overflow AI',
         description: 'Instant emergency assistance, first aid guidance, and AI symptom help.',
         theme_color: '#1D4ED8',
         background_color: '#F8FAFC',

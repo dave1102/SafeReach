@@ -42,8 +42,8 @@ export default function Contacts() {
 
   const shareLocation = async (contact) => {
     const text = coords
-      ? `I'm sharing my live location via SafeReach: https://www.openstreetmap.org/?mlat=${coords.lat}&mlon=${coords.lng}#map=16/${coords.lat}/${coords.lng}`
-      : "I'm trying to share my location via SafeReach but it isn't available right now."
+      ? `I'm sharing my live location via Overflow AI: https://www.openstreetmap.org/?mlat=${coords.lat}&mlon=${coords.lng}#map=16/${coords.lat}/${coords.lng}`
+      : "I'm trying to share my location via Overflow AI but it isn't available right now."
     if (navigator.share) {
       await navigator.share({ title: 'My location', text }).catch(() => {})
     } else {

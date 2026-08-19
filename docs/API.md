@@ -1,4 +1,4 @@
-# SafeReach — Backend API Reference
+# Overflow AI — Backend API Reference
 
 Base URL (local dev): `http://localhost:5000/api`
 
@@ -8,7 +8,7 @@ attaches this automatically from the signed-in Firebase user.
 
 ## Health
 
-`GET /health` → `{ status: "ok", service: "safereach-api" }`
+`GET /health` → `{ status: "ok", service: "overflow-ai-api" }`
 
 ## AI Assistant
 
