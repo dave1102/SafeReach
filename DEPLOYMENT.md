@@ -34,7 +34,7 @@ works — pick what your team already uses.
 4. Environment variables (Render dashboard → Environment):
    - `PORT` — Render sets this automatically, but the app reads `process.env.PORT` so it's fine.
    - `CLIENT_ORIGIN` — your deployed frontend URL, e.g. `https://overflow-ai.vercel.app`
-   - `GEMINI_API_KEY` or `OPENAI_API_KEY`
+   - `GROQ_API_KEY` (recommended) or `GEMINI_API_KEY` or `OPENAI_API_KEY`
    - `GOOGLE_PLACES_API_KEY` (optional)
    - `FIREBASE_SERVICE_ACCOUNT_JSON` — paste the **entire** service account JSON as one line
      (the app checks this env var before falling back to a file path — no need to upload the file)
@@ -89,5 +89,5 @@ Not wired up in this starter. To add:
 - [ ] Add an emergency contact, tap call/SMS/share-location
 - [ ] Open a first-aid guide, tap "Read aloud"
 - [ ] Open Maps — confirm nearby hospitals load (Overpass works with zero config)
-- [ ] Ask the AI Assistant a sample symptom question (requires `GEMINI_API_KEY`/`OPENAI_API_KEY` set)
+- [ ] Ask the AI Assistant a sample symptom question (requires `GROQ_API_KEY`/`GEMINI_API_KEY`/`OPENAI_API_KEY` set)
 - [ ] Set your own user's Firestore `role` to `admin` and confirm `/admin` loads analytics

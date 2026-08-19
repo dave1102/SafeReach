@@ -25,7 +25,8 @@ Response:
 { "reply": "..." }
 ```
 
-Requires `GEMINI_API_KEY` or `OPENAI_API_KEY` set on the server; returns `503` if neither is set.
+Requires `GROQ_API_KEY`, `GEMINI_API_KEY`, or `OPENAI_API_KEY` set on the server (checked in that
+order); returns `503` if none are set.
 
 ## Places (hospitals / pharmacies / police)
 

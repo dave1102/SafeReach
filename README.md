@@ -16,7 +16,7 @@ an offline first-aid library, and an AI symptom assistant, in a fast, installabl
 | Frontend | React 18 + Vite, Tailwind CSS, React Router, Leaflet / react-leaflet |
 | Auth & DB | Firebase Authentication (email/password + Google), Firestore |
 | Backend | Node.js + Express |
-| AI | Google Gemini (default) or OpenAI, via a small backend proxy |
+| AI | Groq (default, OpenAI-compatible) — Gemini or OpenAI also supported, via a small backend proxy |
 | Maps data | OpenStreetMap Overpass API (free, default) or Google Places (optional, better data) |
 | Offline | `vite-plugin-pwa` (Workbox) — installable PWA with offline caching |
 
@@ -50,7 +50,8 @@ overflow-ai/
 - **Auth**: email/password sign up & login, Google sign-in (Firebase Auth)
 - **Dashboard**: press-and-hold SOS button (logs alert + location to Firestore), nearby hospitals
   preview, flashlight, loud alarm, voice-command shortcut, recent alerts feed
-- **AI Assistant**: chat UI → backend → Gemini/OpenAI, with a medical-disclaimer system prompt that
+- **AI Assistant**: chat UI → backend → Groq (default), Gemini, or OpenAI, with a medical-disclaimer
+  system prompt that
   asks for possible causes, first-aid steps, and urgent-care guidance
 - **Emergency Contacts**: add/edit/delete (Firestore), one-tap call (`tel:`) and SMS (`sms:`), share
   live location via the Web Share API (falls back to a pre-filled SMS link)
@@ -84,7 +85,7 @@ Messaging on top of this structure.
 ### 2. Backend
 ```bash
 cd server
-cp .env.example .env       # fill in GEMINI_API_KEY (or OPENAI_API_KEY), etc.
+cp .env.example .env       # fill in GROQ_API_KEY (fastest to set up), or GEMINI_API_KEY/OPENAI_API_KEY
 npm install
 npm run dev                 # http://localhost:5000
 ```
@@ -103,7 +104,7 @@ The **Admin** nav link will then appear.
 
 ### Running without any API keys
 - The AI Assistant will respond with a friendly "not configured" message until you set
-  `GEMINI_API_KEY` or `OPENAI_API_KEY`.
+  `GROQ_API_KEY` (recommended — fast and has a generous free tier) or `GEMINI_API_KEY`/`OPENAI_API_KEY`.
 - Nearby places (hospitals/pharmacies/police) work out of the box with no key at all, via the
   free OpenStreetMap Overpass API. Set `GOOGLE_PLACES_API_KEY` for richer/more current data.
 

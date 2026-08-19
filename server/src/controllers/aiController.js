@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 // System prompt keeps the assistant firmly in "informational triage"
 // territory: possible causes + first aid + urgency guidance, always
 // paired with a disclaimer, never a diagnosis.
-const SYSTEM_PROMPT = `You are the Overflow AI AI Assistant, a calm, careful first-aid and
+const SYSTEM_PROMPT = `You are the Overflow AI Assistant, a calm, careful first-aid and
 symptom-information helper embedded in an emergency-preparedness app.
 
 For every message describing symptoms:
@@ -42,6 +42,35 @@ async function callGemini(message, history) {
   return data.candidates?.[0]?.content?.parts?.map((p) => p.text).join('') || ''
 }
 
+async function callGroq(message, history) {
+  const messages = [
+    { role: 'system', content: SYSTEM_PROMPT },
+    ...history
+      .filter((m) => m.role === 'user' || m.role === 'assistant')
+      .map((m) => ({ role: m.role, content: m.content }))
+  ]
+
+  // Groq exposes an OpenAI-compatible endpoint, so the request shape matches
+  // callOpenAI() below almost exactly — just a different base URL/key.
+  // Default model is a current (non-deprecated) Groq model; override with
+  // GROQ_MODEL in .env if you want e.g. openai/gpt-oss-120b for higher quality.
+  const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${process.env.GROQ_API_KEY}`
+    },
+    body: JSON.stringify({
+      model: process.env.GROQ_MODEL || 'openai/gpt-oss-20b',
+      messages,
+      temperature: 0.4
+    })
+  })
+  const data = await res.json()
+  if (!res.ok) throw new Error(data.error?.message || 'Groq request failed')
+  return data.choices?.[0]?.message?.content || ''
+}
+
 async function callOpenAI(message, history) {
   const messages = [
     { role: 'system', content: SYSTEM_PROMPT },
@@ -71,13 +100,15 @@ export async function askAssistant(req, res, next) {
     }
 
     let reply
-    if (process.env.GEMINI_API_KEY) {
+    if (process.env.GROQ_API_KEY) {
+      reply = await callGroq(message, history)
+    } else if (process.env.GEMINI_API_KEY) {
       reply = await callGemini(message, history)
     } else if (process.env.OPENAI_API_KEY) {
       reply = await callOpenAI(message, history)
     } else {
       return res.status(503).json({
-        message: 'AI assistant is not configured. Set GEMINI_API_KEY or OPENAI_API_KEY on the server.'
+        message: 'AI assistant is not configured. Set GROQ_API_KEY, GEMINI_API_KEY, or OPENAI_API_KEY on the server.'
       })
     }
 
